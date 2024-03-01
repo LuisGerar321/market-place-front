@@ -10,8 +10,6 @@ export enum statusMessageCode {
   ERROR = "error",
 }
 
-const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhVmFsdWVzIjp7InVpZCI6IjY3ODUxMzNhLTE0ODQtNGFhOS1iZjFlLTJiNmUzY2E1MGIzNiIsImVtYWlsIjoibWFyaWFuYUBnbWFpbC5jb20iLCJuYW1lIjoiTWFyaWFuYSBNZW5kb3phIiwicGFzc3dvcmQiOiIkMmIkMDQkb1pKbTMzRUhCNm1QaVVBTWVENktTLlJpcjBNQ2VTUk1WNmEycTRjVTJ3dXUvNTkzMGhvdkMiLCJjcmVhdGVkQXQiOiIyMDI0LTAyLTI5VDE5OjEzOjI2LjQ2NloiLCJ1cGRhdGVkQXQiOiIyMDI0LTAyLTI5VDE5OjEzOjI2LjQ2NloiLCJyb2xlSWQiOjJ9LCJfcHJldmlvdXNEYXRhVmFsdWVzIjp7InVpZCI6IjY3ODUxMzNhLTE0ODQtNGFhOS1iZjFlLTJiNmUzY2E1MGIzNiIsImVtYWlsIjoibWFyaWFuYUBnbWFpbC5jb20iLCJuYW1lIjoiTWFyaWFuYSBNZW5kb3phIiwicGFzc3dvcmQiOiIkMmIkMDQkb1pKbTMzRUhCNm1QaVVBTWVENktTLlJpcjBNQ2VTUk1WNmEycTRjVTJ3dXUvNTkzMGhvdkMiLCJjcmVhdGVkQXQiOiIyMDI0LTAyLTI5VDE5OjEzOjI2LjQ2NloiLCJ1cGRhdGVkQXQiOiIyMDI0LTAyLTI5VDE5OjEzOjI2LjQ2NloiLCJyb2xlSWQiOjJ9LCJ1bmlxbm8iOjEsIl9jaGFuZ2VkIjp7fSwiX29wdGlvbnMiOnsiaXNOZXdSZWNvcmQiOmZhbHNlLCJfc2NoZW1hIjpudWxsLCJfc2NoZW1hRGVsaW1pdGVyIjoiIiwicmF3Ijp0cnVlLCJhdHRyaWJ1dGVzIjpbInVpZCIsImVtYWlsIiwibmFtZSIsInBhc3N3b3JkIiwiY3JlYXRlZEF0IiwidXBkYXRlZEF0Iiwicm9sZUlkIl19LCJpc05ld1JlY29yZCI6ZmFsc2UsImlhdCI6MTcwOTIzNDAyM30.onBGWVwfN_hRiqm2gdCOwRqXN8Rv8WM4acam8-enGJE";
 const ProductForm = () => {
   const [product, setProduct] = useState({
     name: "",
@@ -21,7 +19,7 @@ const ProductForm = () => {
 
   const [showMessage, setShowMessage] = useState(false);
   const [message, setMessage] = useState({ status: statusMessageCode.WARMING, describe: "" });
-
+  const token = localStorage.getItem("token");
   const [errors, setErrors] = useState({
     name: "",
     quantity: "",
